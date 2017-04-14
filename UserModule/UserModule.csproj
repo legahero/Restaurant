@@ -1,0 +1,175 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC754D3C-C545-4918-AF9C-5A27A3AE802C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserModule</RootNamespace>
+    <AssemblyName>UserModule</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>legahero.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TMPRELEASE|AnyCPU' ">
+    <OutputPath>bin\TMPRELEASE\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files (x86)\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbOperate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15f7f04c1f279578, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\DbOperate\bin\Release\DbOperate.dll</HintPath>
+    </Reference>
+    <Reference Include="MixFunc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15f7f04c1f279578, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\MixFunc\bin\Release\MixFunc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormDeptInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeptInfo.designer.cs">
+      <DependentUpon>FormDeptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployee.designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmployeeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployeeInfo.designer.cs">
+      <DependentUpon>FormEmployeeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGroupInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupInfo.designer.cs">
+      <DependentUpon>FormGroupInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRoleProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoleProperty.designer.cs">
+      <DependentUpon>FormRoleProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRolesInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRolesInfo.designer.cs">
+      <DependentUpon>FormRolesInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserMgr.designer.cs">
+      <DependentUpon>FormUserMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModPwd.Designer.cs">
+      <DependentUpon>FrmModPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDbAdaHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormDeptInfo.resx">
+      <DependentUpon>FormDeptInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployeeInfo.resx">
+      <DependentUpon>FormEmployeeInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupInfo.resx">
+      <DependentUpon>FormGroupInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoleProperty.resx">
+      <DependentUpon>FormRoleProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRolesInfo.resx">
+      <DependentUpon>FormRolesInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserMgr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormUserMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModPwd.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmModPwd.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="legahero.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+[Reckoning]
+Prompt=0
+AutoClearTable=0
+AutoOpenCashbox=0
+MoneyStype=0
+CashboxPort=LPT1
+ClientPromptPort=COM1
+[Print]
+BillPrinter=
+BillMode=
+OrderPrinter=
+OrderMode=
+ServingPrinter=
+ServingMode=
+ReportPrinter=
+ReportMode=

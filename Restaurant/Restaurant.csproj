@@ -1,0 +1,533 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3250E69-F1FB-4411-8A7A-01CF301808E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Restaurant</RootNamespace>
+    <AssemblyName>Restaurant</AssemblyName>
+    <ApplicationIcon>food.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>legahero.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TMPRELEASE|AnyCPU' ">
+    <OutputPath>bin\TMPRELEASE\</OutputPath>
+    <DefineConstants>TRACE;TMPRELEASE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files (x86)\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15f7f04c1f279578, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DataGridViewAutoFilter\bin\Release\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DbOperate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15f7f04c1f279578, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DbOperate\bin\Release\DbOperate.dll</HintPath>
+    </Reference>
+    <Reference Include="MixFunc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15f7f04c1f279578, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\MixFunc\bin\Release\MixFunc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAppOption.cs" />
+    <Compile Include="CGlobalInstance.cs" />
+    <Compile Include="ComPrinter.cs" />
+    <Compile Include="CRunSetting.cs" />
+    <Compile Include="CSortStyle.cs" />
+    <Compile Include="DbAdaHelper.cs" />
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssociator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssociator.Designer.cs">
+      <DependentUpon>FormAssociator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssociatorClassify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssociatorClassify.Designer.cs">
+      <DependentUpon>FormAssociatorClassify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssociatorItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssociatorItem.Designer.cs">
+      <DependentUpon>FormAssociatorItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssociatorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssociatorRecord.Designer.cs">
+      <DependentUpon>FormAssociatorRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBill.Designer.cs">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBillListQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBillListQuery.Designer.cs">
+      <DependentUpon>FormBillListQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBillListQueryB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBillListQueryB.Designer.cs">
+      <DependentUpon>FormBillListQueryB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBillQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBillQuery.Designer.cs">
+      <DependentUpon>FormBillQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeposit.Designer.cs">
+      <DependentUpon>FormDeposit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiningDept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiningDept.Designer.cs">
+      <DependentUpon>FormDiningDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiningTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiningTable.Designer.cs">
+      <DependentUpon>FormDiningTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiningTable2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiningTable2.Designer.cs">
+      <DependentUpon>FormDiningTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodElement.Designer.cs">
+      <DependentUpon>FormGoodElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsClassify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsClassify.Designer.cs">
+      <DependentUpon>FormGoodsClassify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsDetail.Designer.cs">
+      <DependentUpon>FormGoodsDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsItem.Designer.cs">
+      <DependentUpon>FormGoodsItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsMaterial.Designer.cs">
+      <DependentUpon>FormGoodsMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsMaterialItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsMaterialItem.Designer.cs">
+      <DependentUpon>FormGoodsMaterialItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGoodsSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoodsSet.Designer.cs">
+      <DependentUpon>FormGoodsSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOnCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOnCredit.Designer.cs">
+      <DependentUpon>FormOnCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOnCreditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOnCreditItem.Designer.cs">
+      <DependentUpon>FormOnCreditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOnCreditRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOnCreditRecord.Designer.cs">
+      <DependentUpon>FormOnCreditRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrderdishes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderdishes.Designer.cs">
+      <DependentUpon>FormOrderdishes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrearrange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrearrange.Designer.cs">
+      <DependentUpon>FormPrearrange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReckoning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReckoning.Designer.cs">
+      <DependentUpon>FormReckoning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRepayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRepayment.Designer.cs">
+      <DependentUpon>FormRepayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStyle.designer.cs">
+      <DependentUpon>FormStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSysSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSysSetting.Designer.cs">
+      <DependentUpon>FormSysSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTableClassify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTableClassify.Designer.cs">
+      <DependentUpon>FormTableClassify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTableSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTableSet.Designer.cs">
+      <DependentUpon>FormTableSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransfer.Designer.cs">
+      <DependentUpon>FormTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUnite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUnite.Designer.cs">
+      <DependentUpon>FormUnite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LptPrinter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssociator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAssociator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssociatorClassify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAssociatorClassify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssociatorItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAssociatorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssociatorRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAssociatorRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBill.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBillListQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormBillListQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBillListQueryB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormBillListQueryB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBillQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormBillQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeposit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDeposit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiningDept.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDiningDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiningTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDiningTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiningTable2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDiningTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodElement.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsClassify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsClassify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsMaterial.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsMaterialItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsMaterialItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGoodsSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormGoodsSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOnCredit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormOnCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOnCreditItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormOnCreditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOnCreditRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormOnCreditRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderdishes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormOrderdishes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrearrange.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPrearrange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReckoning.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormReckoning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRepayment.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormRepayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStyle.resx">
+      <DependentUpon>FormStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSysSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormSysSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTableClassify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormTableClassify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTableSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormTableSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransfer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUnite.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormUnite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libraries\EncryptKeyValue\EncryptKeyValue.vcproj">
+      <Project>{DBB66821-8E5F-474C-A564-0A077BC67759}</Project>
+      <Name>EncryptKVLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\YyLogger\YyLogger.csproj">
+      <Project>{867D1B13-113B-43A0-95A2-FE211CF3CE4D}</Project>
+      <Name>YyLogger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\YyPrint\YyPrint.csproj">
+      <Project>{E61C661A-D107-4963-9BFE-CF5AC5324AC8}</Project>
+      <Name>YyPrint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\YyTableCtrl\YyTableCtrl.csproj">
+      <Project>{83CD27C6-0A85-46B5-A729-969987DECD96}</Project>
+      <Name>YyTableCtrl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserModule\UserModule.csproj">
+      <Project>{BC754D3C-C545-4918-AF9C-5A27A3AE802C}</Project>
+      <Name>UserModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Query.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\togo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drink.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearTable.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cook.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cookTime.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="legahero.snk" />
+    <None Include="Resources\cooking.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="food.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
